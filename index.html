@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <!-- App Bar -->
+  <nav class="w-full bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-3xl mx-auto flex items-center gap-3 px-4 py-3">
+      <!-- Material-style logo -->
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="8" fill="#fff"/>
+          <rect x="6" y="8" width="16" height="12" rx="2" fill="#2563eb"/>
+          <rect x="10" y="12" width="8" height="2" rx="1" fill="#fff"/>
+          <rect x="10" y="15" width="8" height="2" rx="1" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="text-2xl font-bold text-gray-800 tracking-tight">Prompt Library</span>
+    </div>
+  </nav>
+  <main class="max-w-3xl mx-auto px-4 py-8">
+    <section class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+      <form id="prompt-form" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="flex flex-col">
+          <label for="prompt-title" class="text-sm font-medium text-gray-700 mb-1">Title</label>
+          <input type="text" id="prompt-title" placeholder="Prompt Title" required class="material-input">
+        </div>
+        <div class="flex flex-col">
+          <label for="prompt-type" class="text-sm font-medium text-gray-700 mb-1">Type</label>
+          <select id="prompt-type" required class="material-input">
+            <option value="">Type</option>
+            <option value="chat">Chat</option>
+            <option value="code">Code</option>
+            <option value="image">Image</option>
+          </select>
+        </div>
+        <div class="flex flex-col md:row-span-2">
+          <label for="prompt-text" class="text-sm font-medium text-gray-700 mb-1">Prompt</label>
+          <textarea id="prompt-text" placeholder="Enter your prompt..." required class="material-input min-h-[70px] font-mono"></textarea>
+        </div>
+        <div class="flex items-end md:col-span-3">
+          <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg shadow hover:bg-blue-700 transition">Add Prompt</button>
+        </div>
+      </form>
+      <div class="flex flex-col sm:flex-row gap-3 mb-2">
+        <select id="filter-type" class="material-input">
+          <option value="">All Types</option>
+          <option value="chat">Chat</option>
+          <option value="code">Code</option>
+          <option value="image">Image</option>
+        </select>
+        <input type="text" id="search-keyword" placeholder="Search prompts..." class="material-input">
+        <button id="clear-filters" class="bg-gray-200 text-gray-700 font-medium px-4 py-2 rounded-lg hover:bg-gray-300 transition">Clear</button>
+      </div>
+    </section>
+    <section id="prompt-board" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></section>
+  </main>
+  <footer class="text-center text-gray-400 text-sm py-6">Made with <span class="text-blue-500">★</span> Material style</footer>
+  <style>
+    .material-input {
+      @apply px-4 py-2 rounded-lg border border-gray-300 bg-white shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition;
+    }
+  </style>
+  <script src="app.js"></script>
+</body>
+</html> 
